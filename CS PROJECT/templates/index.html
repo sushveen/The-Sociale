@@ -1,1 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Sociale</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #F9F9F9; /* Light Gray background */
+            color: #333333; /* Dark Gray for text */
+            line-height: 1.6;
+        }
 
+        header {
+            background: linear-gradient(135deg, #2C3E50, #34495E); /* Soft gradient for header */
+            padding: 2em;
+            text-align: center;
+            color: #FFFFFF; /* White text */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            border-bottom: 2px solid #BDC3C7; /* Subtle border for separation */
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.8rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        main {
+            margin: 0 auto;
+            padding: 20px;
+            max-width: 1200px;
+        }
+
+        /* Filter Section */
+        .filter-section {
+            background: #FFFFFF; /* White background */
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+            margin-bottom: 40px;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .filter-section:hover {
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+        }
+
+        .filter-section h2 {
+            font-size: 2rem;
+            color: #2C3E50; /* Charcoal Navy */
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .filter-section form {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: nowrap;
+            justify-content: center;
+        }
+
+        .filter-section label {
+            font-weight: 500;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .filter-section input,
+        .filter-section select {
+            padding: 12px;
+            width: 260px;
+            border-radius: 8px;
+            border: 1px solid #BDC3C7; /* Light Gray border */
+            background: #ECF0F1; /* Very light gray */
+            font-size: 1rem;
+            color: #34495E; /* Slightly lighter gray for text */
+            box-sizing: border-box;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .filter-section input:focus,
+        .filter-section select:focus {
+            border-color: #1ABC9C; /* Muted Teal for focus */
+            outline: none;
+            box-shadow: 0 0 8px rgba(26, 188, 156, 0.4); /* Glow effect */
+        }
+
+        .filter-section button {
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #FFFFFF;
+            background: #1ABC9C; /* Muted Teal */
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 10px rgba(26, 188, 156, 0.2); /* Subtle button shadow */
+        }
+
+        .filter-section button:hover {
+            background: #16A085; /* Darker Teal on hover */
+            transform: translateY(-3px); /* Slight raise effect */
+        }
+
+        /* Places Grid */
+        .places-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .place-card {
+            background: #FFFFFF;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .place-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+        }
+
+        .place-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .place-card:hover img {
+            transform: scale(1.05); /* Zoom-in effect on hover */
+        }
+
+        .place-card-content {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .place-card h3 {
+            font-size: 1.6rem;
+            color: #2C3E50;
+            margin: 0 0 15px;
+        }
+
+        .place-card p {
+            font-size: 1rem;
+            color: #7F8C8D; /* Subtle gray */
+            margin: 0 0 15px;
+        }
+
+        .place-card .action-btn {
+            margin-top: auto;
+            text-align: center;
+            padding: 12px 25px;
+            background: #1ABC9C; /* Muted Teal */
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: background 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 10px rgba(26, 188, 156, 0.3); /* Subtle button shadow */
+        }
+
+        .place-card .action-btn:hover {
+            background: #16A085; /* Darker Teal */
+            transform: scale(1.05);
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>The Sociale</h1>
+    </header>
+
+    <main>
+        <!-- Filter Section -->
+        <section class="filter-section">
+            <h2>Find the Perfect Place for Your Next Outing!</h2>
+            <form action="/" method="POST">
+                <select name="age_category" required>
+                    <option value="" disabled selected>Age Group</option>
+                    <option value="all">All Ages</option>
+                    <option value="7-13">7-13</option>
+                    <option value="13-18">13-18</option>
+                    <option value="18-25">18-25</option>
+                    <option value="25-35">25-35</option>
+                    <option value="35-45">35-45</option>
+                    <option value="45-55">45-55</option>
+                </select>
+                <input type="number" name="budget" placeholder="Budget" min="0" required>
+                <select name="location" required>
+                    <option value="" disabled selected>Location</option>
+                    <option value="Arekere">Arekere</option>
+                    <option value="Banashankari">Banashankari</option>
+                    <option value="Basavanagudi">Basavanagudi</option>
+                    <option value="Belandur">Belandur</option>
+                    <option value="BTM Layout">BTM Layout</option>
+                    <option value="Bommanahalli">Bommanahalli</option>
+                    <option value="Central Bangalore">Central Bangalore</option>
+                    <option value="Devanahalli">Devanahalli</option>
+                    <option value="Electronic City">Electronic City</option>
+                    <option value="Frazer Town">Frazer Town</option>
+                    <option value="Hebbal">Hebbal</option>
+                    <option value="HSR Layout">HSR Layout</option>
+                    <option value="Indiranagar">Indiranagar</option>
+                    <option value="Jalahalli">Jalahalli</option>
+                    <option value="Jayanagar">Jayanagar</option>
+                    <option value="JP Nagar">JP Nagar</option>
+                    <option value="Kalyan Nagar">Kalyan Nagar</option>
+                    <option value="Koramangala">Koramangala</option>
+                    <option value="Lalbagh Road">Lalbagh Road</option>
+                    <option value="Mahadevapura">Mahadevapura</option>
+                    <option value="Malleshwaram">Malleshwaram</option>
+                    <option value="Marathalli">Marathalli</option>
+                    <option value="Mysore Road">Mysore Road</option>
+                    <option value="Rajaji Nagar">Rajaji Nagar</option>
+                    <option value="RR Nagar">RR Nagar</option>
+                    <option value="Sadashivanagar">Sadashivanagar</option>
+                    <option value="Seshadripuram">Seshadripuram</option>
+                    <option value="Shivajinagar">Shivajinagar</option>
+                    <option value="Vasanth Nagar">Vasanth Nagar</option>
+                    <option value="Whitefield">Whitefield</option>
+                    <option value="Yelahanka">Yelahanka</option>
+                    <option value="Yeshwanthpur">Yeshwanthpur</option>
+                    <option value="Ulsoor">Ulsoor</option>
+    
+                </select>
+                <select name="type" required>
+                    <option value="" disabled selected>Type</option>
+                    <option value="Amusement Park">Amusement Park</option>
+                    <option value="Mall">Mall</option>
+                    <option value="Museum">Museum</option>
+                    <option value="Restaurant">Restaurant</option>
+                    <option value="Temple">Temple</option>
+                    <option value="Arcade">Arcade</option>
+                    <option value="Nature">Nature</option>
+                    <option value="Golf">Golf</option>
+                    <option value="Go-Karting">Go-Karting</option>
+                    <option value="Paintball">Paintball</option>
+                    <option value="Laser Tag">Laser Tag</option>
+                    
+                </select>
+                <button type="submit">Search</button>
+            </form>
+        </section>
+
+        <!-- Places Grid -->
+        <section class="places-grid">
+            {% for place in places %}
+            <div class="place-card">
+                <img src="{{ place.image_url }}" alt="{{ place.name }}">
+                <div class="place-card-content">
+                    <h3>{{ place.name }}</h3>
+                    <p><strong>Location:</strong> {{ place.location }}</p>
+                    <p><strong>Budget:</strong> {{ place.budget }}</p>
+                    <p><strong>Age Rating:</strong> {{ place.age_rating }}</p>
+                    <p><strong>Type:</strong> {{ place.type }}</p>
+                    <a href="#" class="action-btn">View Details</a>
+                </div>
+            </div>
+            {% endfor %}
+        </section>
+    </main>
+</body>
+</html>
