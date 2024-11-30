@@ -14,10 +14,9 @@ with app.app_context():
         activity="Amusement Park",
         rating=4.5, 
         num_people_min=1, 
-        num_people_max=None,  # You can set this to None or a specific value
+        num_people_max=None,  
         image="https://i.ytimg.com/vi/yp3B7hdot_U/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDihT4YF-7qpCxy2Z_DfQbwpNmqIA"
             )
 
-        # To add this entry to the database
     db.session.add(place1)
     db.session.commit()
