@@ -10,25 +10,26 @@
             font-family: 'Inter', Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: #F9F9F9; /* Light Gray background */
-            color: #333333; /* Dark Gray for text */
+            background: #F7F8FA; /* Light Gray background */
+            color: #333333;
             line-height: 1.6;
         }
 
         header {
             background: linear-gradient(135deg, #2C3E50, #34495E); /* Soft gradient for header */
-            padding: 2em;
+            padding: 3em;
             text-align: center;
             color: #FFFFFF; /* White text */
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-            border-bottom: 2px solid #BDC3C7; /* Subtle border for separation */
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+            border-bottom: 2px solid #BDC3C7;
         }
 
         header h1 {
             margin: 0;
-            font-size: 2.8rem;
-            font-weight: bold;
-            letter-spacing: 1px;
+            font-size: 3rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
         main {
@@ -39,82 +40,83 @@
 
         /* Filter Section */
         .filter-section {
-            background: #FFFFFF; /* White background */
-            border-radius: 12px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-            padding: 25px;
-            margin-bottom: 40px;
+            background: #FFFFFF;
+            border-radius: 15px;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+            padding: 30px;
+            margin-bottom: 50px;
+            width: 100%;
             transition: box-shadow 0.3s ease;
         }
 
         .filter-section:hover {
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
         }
 
         .filter-section h2 {
-            font-size: 2rem;
-            color: #2C3E50; /* Charcoal Navy */
+            font-size: 2.5rem;
+            color: #2C3E50;
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .filter-section form {
             display: flex;
             gap: 20px;
-            align-items: center;
-            flex-wrap: nowrap;
+            flex-wrap: wrap;
             justify-content: center;
         }
 
         .filter-section label {
-            font-weight: 500;
+            font-weight: 600;
             margin-bottom: 5px;
-            display: block;
+            color: #34495E;
         }
 
         .filter-section input,
         .filter-section select {
-            padding: 12px;
-            width: 260px;
-            border-radius: 8px;
-            border: 1px solid #BDC3C7; /* Light Gray border */
-            background: #ECF0F1; /* Very light gray */
-            font-size: 1rem;
-            color: #34495E; /* Slightly lighter gray for text */
+            padding: 14px;
+            width: 270px;
+            border-radius: 10px;
+            border: 1px solid #BDC3C7;
+            background: #ECF0F1;
+            font-size: 1.1rem;
+            color: #34495E;
             box-sizing: border-box;
             transition: border-color 0.3s ease, box-shadow 0.3s ease;
         }
 
         .filter-section input:focus,
         .filter-section select:focus {
-            border-color: #1ABC9C; /* Muted Teal for focus */
+            border-color: #1ABC9C;
             outline: none;
-            box-shadow: 0 0 8px rgba(26, 188, 156, 0.4); /* Glow effect */
+            box-shadow: 0 0 10px rgba(26, 188, 156, 0.3);
         }
 
         .filter-section button {
-            padding: 12px 30px;
-            font-size: 1.1rem;
+            padding: 14px 35px;
+            font-size: 1.2rem;
             font-weight: bold;
             color: #FFFFFF;
-            background: #1ABC9C; /* Muted Teal */
+            background: #1ABC9C;
             border: none;
-            border-radius: 8px;
+            border-radius: 10px;
             cursor: pointer;
             transition: background 0.3s ease, transform 0.3s ease;
-            box-shadow: 0 4px 10px rgba(26, 188, 156, 0.2); /* Subtle button shadow */
+            box-shadow: 0 6px 12px rgba(26, 188, 156, 0.2);
         }
 
         .filter-section button:hover {
-            background: #16A085; /* Darker Teal on hover */
-            transform: translateY(-3px); /* Slight raise effect */
+            background: #16A085;
+            transform: translateY(-3px);
         }
 
         /* Places Grid */
         .places-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
         }
 
         .place-card {
@@ -129,18 +131,18 @@
 
         .place-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
         }
 
         .place-card img {
             width: 100%;
-            height: 200px;
+            height: 220px;
             object-fit: cover;
             transition: transform 0.3s ease;
         }
 
         .place-card:hover img {
-            transform: scale(1.05); /* Zoom-in effect on hover */
+            transform: scale(1.05);
         }
 
         .place-card-content {
@@ -151,33 +153,46 @@
         }
 
         .place-card h3 {
-            font-size: 1.6rem;
+            font-size: 1.7rem;
             color: #2C3E50;
-            margin: 0 0 15px;
+            margin: 0 0 10px;
         }
 
         .place-card p {
-            font-size: 1rem;
-            color: #7F8C8D; /* Subtle gray */
+            font-size: 1.1rem;
+            color: #7F8C8D;
             margin: 0 0 15px;
         }
 
         .place-card .action-btn {
             margin-top: auto;
             text-align: center;
-            padding: 12px 25px;
-            background: #1ABC9C; /* Muted Teal */
+            padding: 14px 28px;
+            background: #1ABC9C;
             color: white;
             text-decoration: none;
-            border-radius: 8px;
+            border-radius: 10px;
             font-weight: bold;
             transition: background 0.3s ease, transform 0.3s ease;
-            box-shadow: 0 4px 10px rgba(26, 188, 156, 0.3); /* Subtle button shadow */
+            box-shadow: 0 6px 12px rgba(26, 188, 156, 0.2);
         }
 
         .place-card .action-btn:hover {
-            background: #16A085; /* Darker Teal */
+            background: #16A085;
             transform: scale(1.05);
+        }
+
+        /* Media Query for Mobile */
+        @media (max-width: 768px) {
+            .filter-section form {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .filter-section select,
+            .filter-section input {
+                width: 100%;
+            }
         }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
@@ -188,13 +203,15 @@
     </header>
 
     <main>
-        <!-- Filter Section -->
+        <!-- Filters -->
         <section class="filter-section">
             <h2>Find the Perfect Place for Your Next Outing!</h2>
             <form action="/" method="POST">
-                <select name="age_category" required>
+
+                <!--Age Group-->
+                <select name="age_category">
                     <option value="" disabled selected>Age Group</option>
-                    <option value="all">All Ages</option>
+                    <option value="All ages">All Ages</option>
                     <option value="7-13">7-13</option>
                     <option value="13-18">13-18</option>
                     <option value="18-25">18-25</option>
@@ -202,8 +219,13 @@
                     <option value="35-45">35-45</option>
                     <option value="45-55">45-55</option>
                 </select>
-                <input type="number" name="budget" placeholder="Budget" min="0" required>
-                <select name="location" required>
+
+                <!--Budget-->
+                <input type="number" name="budget_min" placeholder="Min Budget" min="0">
+                <input type="number" name="budget_max" placeholder="Max Budget" min="0">
+
+                <!--Location-->
+                <select name="location">
                     <option value="" disabled selected>Location</option>
                     <option value="Arekere">Arekere</option>
                     <option value="Banashankari">Banashankari</option>
@@ -238,10 +260,11 @@
                     <option value="Yelahanka">Yelahanka</option>
                     <option value="Yeshwanthpur">Yeshwanthpur</option>
                     <option value="Ulsoor">Ulsoor</option>
-    
                 </select>
-                <select name="type" required>
-                    <option value="" disabled selected>Type</option>
+
+                <!--Activity/Outing Type-->
+                <select name="activity">
+                    <option value="" disabled selected>Activity</option>
                     <option value="Amusement Park">Amusement Park</option>
                     <option value="Mall">Mall</option>
                     <option value="Museum">Museum</option>
@@ -253,21 +276,36 @@
                     <option value="Go-Karting">Go-Karting</option>
                     <option value="Paintball">Paintball</option>
                     <option value="Laser Tag">Laser Tag</option>
-                    
+                    <option value="Resort">Resort</option>
+                    <option value="Shopping Street">Shopping Street</option>
+                    <option value="Escape Room">Escape Room</option>
+
                 </select>
+
+                <!--Sort By-->
+                <select name="sort_by">
+                    <option value="" disabled selected>Sort By</option>
+                    <option value="rating">Rating</option>
+                    <option value="popularity">Popularity</option>
+                </select>
+
+                <!--Number-->
+                <input type="number" name="number" placeholder="Number of People" min="0">
+                
+                <!--Search Button-->
                 <button type="submit">Search</button>
             </form>
         </section>
-
+            
         <!-- Places Grid -->
         <section class="places-grid">
             {% for place in places %}
             <div class="place-card">
-                <img src="{{ place.image_url }}" alt="{{ place.name }}">
+                <img src="{{ place.image or 'https://via.placeholder.com/300' }}" alt="{{ place.name }}">
                 <div class="place-card-content">
                     <h3>{{ place.name }}</h3>
                     <p><strong>Location:</strong> {{ place.location }}</p>
-                    <p><strong>Budget:</strong> {{ place.budget }}</p>
+                    <p><strong>Budget:</strong> ₹{{ place.budget }}</p>
                     <p><strong>Age Rating:</strong> {{ place.age_rating }}</p>
                     <p><strong>Type:</strong> {{ place.type }}</p>
                     <a href="#" class="action-btn">View Details</a>
@@ -278,3 +316,4 @@
     </main>
 </body>
 </html>
+
