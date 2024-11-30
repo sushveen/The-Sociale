@@ -5,21 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Sociale</title>
     <style>
-        /* General Styles */
+        
         body {
             font-family: 'Inter', Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: #F7F8FA; /* Light Gray background */
+            background: #F7F8FA; 
             color: #333333;
             line-height: 1.6;
         }
 
         header {
-            background: linear-gradient(135deg, #2C3E50, #34495E); /* Soft gradient for header */
+            background: linear-gradient(135deg, #2C3E50, #34495E); 
             padding: 3em;
             text-align: center;
-            color: #FFFFFF; /* White text */
+            color: #FFFFFF; 
+            
             box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
             border-bottom: 2px solid #BDC3C7;
         }
@@ -38,7 +39,6 @@
             max-width: 1200px;
         }
 
-        /* Filter Section */
         .filter-section {
             background: #FFFFFF;
             border-radius: 15px;
@@ -111,7 +111,7 @@
             transform: translateY(-3px);
         }
 
-        /* Places Grid */
+
         .places-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -182,7 +182,6 @@
             transform: scale(1.05);
         }
 
-        /* Media Query for Mobile */
         @media (max-width: 768px) {
             .filter-section form {
                 flex-direction: column;
@@ -297,7 +296,7 @@
             </form>
         </section>
             
-        <!-- Places Grid -->
+        
         <section class="places-grid">
             {% for place in places %}
             <div class="place-card">
@@ -316,4 +315,3 @@
     </main>
 </body>
 </html>
-
